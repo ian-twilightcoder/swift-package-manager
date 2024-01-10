@@ -45,6 +45,9 @@ target_link_libraries(Workspace PUBLIC
   PackageRegistry
   PackageSigning
   SourceControl)
+
+target_compile_options(Workspace PRIVATE -package-name SwiftPM)
+
 target_link_libraries(Workspace PUBLIC
   $<$<NOT:$<PLATFORM_ID:Darwin>>:Foundation>)
 # NOTE(compnerd) workaround for CMake not setting up include flags yet
